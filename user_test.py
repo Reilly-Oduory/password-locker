@@ -19,13 +19,8 @@ class TestUser(unittest.TestCase):
 
     def test_user_login(self):
         self.new_user.add_user()
-        self.assertEqual(User.user_login("reilly", "1234"), self.new_user)
+        self.assertEqual(User.user_login("reilly", "1234"), True)
 
-    def test_modify_password(self):
-        self.new_user.add_user()
-        self.new_user.user_login("reilly", "1234")
-        self.new_user.modify_password("newpass")
-        self.assertEqual(self.new_user.password, "newpass")
 
 
 # if __name__ == '__main__':

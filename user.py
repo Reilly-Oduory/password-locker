@@ -10,13 +10,15 @@ class User:
         User.user_list.append(self)
 
     @classmethod
-    def user_login(cls, identification, userpass):
+    def user_login(cls, identification, key):
+        returned_user = User('', '')
         for user in cls.user_list:
-            if user.user == identification:
-                if user.password == userpass:
-                    return user
-                else:
-                    return ''
+            if identification == user.user:
+                returned_user.user = user.user
+                returned_user.password = user.password
+        if returned_user.password == key:
+            return True
+        else:
+            print("login failed")
 
-    def modify_password(self, new_password):
-        self.password = new_password
+
