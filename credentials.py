@@ -9,7 +9,7 @@ class Credential:
         self.user_name = user_name
         self.password = password
         self.email_address = email_address
-        self.account =account
+        self.account = account
 
     def save_credential(self):
         Credential.credential_list.append(self)
